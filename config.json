@@ -1,0 +1,87 @@
+{
+    "algo": "cryptonight",
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "id": null,
+        "worker-id": null,
+        "ipv6": false,
+        "restricted": true
+    },
+    "asm": true,
+    "autosave": true,
+    "av": 0,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": null,
+    "cpu-priority": null,
+    "donate-level": 1,
+    "huge-pages": true,
+    "hw-aes": null,
+    "log-file": "log.txt",
+    "max-cpu-usage": 75,
+    "pools": [
+        {
+            "url": "xmr-eu1.nanopool.org:14433",
+            "user": "85xfCWgrzmo5ti5JrgsS2iPj6MeW52NwPNm9ZkcXEc8QZfeu3G89RHY4t6o9syED6PKJ9q6YwCfXjbqukxpcx13A8gbAj5A.1.asee/zaky.arslan1@gmail.com",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "tls": true,
+            "tls-fingerprint": null
+        },
+		{
+            "url": "xmr-eu2.nanopool.org:14433",
+            "user": "85xfCWgrzmo5ti5JrgsS2iPj6MeW52NwPNm9ZkcXEc8QZfeu3G89RHY4t6o9syED6PKJ9q6YwCfXjbqukxpcx13A8gbAj5A.1.asee/zaky.arslan1@gmail.com",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "tls": true,
+            "tls-fingerprint": null
+        },
+		{
+            "url": "xmr-asia1.nanopool.org:14433",
+            "user": "85xfCWgrzmo5ti5JrgsS2iPj6MeW52NwPNm9ZkcXEc8QZfeu3G89RHY4t6o9syED6PKJ9q6YwCfXjbqukxpcx13A8gbAj5A.1.asee/zaky.arslan1@gmail.com",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "tls": true,
+            "tls-fingerprint": null
+        },
+		{
+            "url": "xmr-us-east1.nanopool.org:14433",
+            "user": "85xfCWgrzmo5ti5JrgsS2iPj6MeW52NwPNm9ZkcXEc8QZfeu3G89RHY4t6o9syED6PKJ9q6YwCfXjbqukxpcx13A8gbAj5A.1.asee/zaky.arslan1@gmail.com",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "tls": true,
+            "tls-fingerprint": null
+        },
+		{
+            "url": "xmr-us-west1.nanopool.org:14433",
+            "user": "85xfCWgrzmo5ti5JrgsS2iPj6MeW52NwPNm9ZkcXEc8QZfeu3G89RHY4t6o9syED6PKJ9q6YwCfXjbqukxpcx13A8gbAj5A.1.asee/zaky.arslan1@gmail.com",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": -1,
+            "tls": true,
+            "tls-fingerprint": null
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "threads": null,
+    "user-agent": null,
+    "watch": false
+}

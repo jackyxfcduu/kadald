@@ -1,0 +1,19 @@
+{
+  "phase": "36.8",
+  "name": "Sidebar Active Positions + 18-Method Checker",
+  "source_archive": "scanner-main.zip",
+  "features": [
+    "isolated sidebar route views",
+    "active simulated positions dashboard",
+    "force all 18 registered methods per selected pair/timeframe",
+    "persistent checker ledger and CSV export",
+    "missing and duplicate matrix-check detection"
+  ],
+  "method_count": 18,
+  "minimum_timeframe": "M5",
+  "rolling_closed_candle_endpoints": 10,
+  "continuous_scan_interval_ms": 60000,
+  "live_exchange_tested": false,
+  "browser_automation_tested": false,
+  "order_execution": false
+}

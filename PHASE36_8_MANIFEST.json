@@ -1,0 +1,39 @@
+{
+  "phase": "36.8.2",
+  "name": "Sidebar Active Positions + 18-Method Checker",
+  "source_archive": "scanner-main.zip",
+  "features": [
+    "isolated sidebar route views",
+    "active simulated positions dashboard",
+    "force all 18 registered methods per selected pair/timeframe",
+    "persistent checker ledger and CSV export",
+    "missing and duplicate matrix-check detection"
+  ],
+  "method_count": 18,
+  "minimum_timeframe": "M5",
+  "rolling_closed_candle_endpoints": 10,
+  "continuous_scan_interval_ms": 60000,
+  "live_exchange_tested": false,
+  "browser_automation_tested": false,
+  "order_execution": false,
+  "version": "36.8.1",
+  "fix": "Scanner startup diagnostics: explicit file:// warning and detailed /api/market/provider errors",
+  "live_api_verified": false,
+  "vercel_deployment_verified": false,
+  "title": "Start Scan no-op fix: missing DOM diagnostics controls",
+  "changes": [
+    "Fixed Start Scan abort before first API request caused by missing lastError DOM element.",
+    "Added Last Error and Provider Connection status elements.",
+    "Added missing continuous-scan Resume/Pause controls and guarded optional diagnostics updates.",
+    "Added phase36_8_2 startup regression test."
+  ],
+  "validation": {
+    "node_check_app_js": "PASS",
+    "node_check_checker_core_js": "PASS",
+    "phase36_8_2_test": "PASS",
+    "phase36_2_through_36_8_and_smoke": "PASS",
+    "browser_automation": "NOT RUN",
+    "live_api": "NOT RUN",
+    "vercel_deployment": "NOT RUN"
+  }
+}

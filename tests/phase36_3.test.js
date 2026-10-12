@@ -1,0 +1,14 @@
+const fs=require('fs');const assert=require('assert');
+const root=__dirname+'/..';const app=fs.readFileSync(root+'/app.js','utf8');const html=fs.readFileSync(root+'/index.html','utf8');
+for(const token of ['function buildEarlyTradePlan','decision:\'EARLY_ENTRY\'','similarityScore','stopLoss','takeProfit','expiryCandles:2','scoreCandidate','findRecentCandidate','Math.max(85,Number(state.currentMinScore)||85)','EARLY LONG','EARLY SHORT']) assert(app.includes(token),'Missing early-entry behavior: '+token);
+assert(html.includes('<th>ENTRY</th>')&&html.includes('<th>STOP LOSS</th>')&&html.includes('<th>TAKE PROFIT</th>'),'Trade plan columns missing');
+assert(!/create-order|placeOrder|\/fapi\/v1\/order|\/api\/v5\/trade\/order/i.test(app),'Order execution must not exist');
+for(const token of ['trackSimulatedTrades','renderWinRate','WINRATE_KEY','methodWinRateRows','activeTradesValue','netRValue']) assert(app.includes(token),'Missing win-rate implementation: '+token);
+for(const token of ['id="winrate"','id="winrateMethods"','id="resetWinRate"','Win Rate']) assert(html.includes(token),'Missing win-rate UI: '+token);
+assert(/localStorage/.test(app),'Win-rate history should persist in browser-local storage');
+assert(app.includes('const reward=Math.abs(takeProfit-entry),rr=reward/risk'),'RR must be calculated from actual entry/SL/TP');
+assert(app.includes('rr<1.5'),'Reject structurally inadequate RR');
+assert(app.includes('targets[0]'),'TP must use a structural target, not a hardcoded 1.5R');
+assert(app.includes('const patterns=PATTERNS.slice(),rows=[],ledger=[];'),'Every scan must schedule all registered ICT methods regardless of saved method filter');
+assert(app.includes('for(let end=from;end<=maxEnd;end++)'),'Historical endpoints must be evaluated');
+console.log('PASS Phase 36.3.3 static acceptance: 85 evidence threshold, recent-candle scan, structural TP, calculated RR, read-only safety, and win-rate dashboard.');

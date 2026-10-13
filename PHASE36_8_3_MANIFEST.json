@@ -1,0 +1,22 @@
+{
+  "phase": "36.8.3",
+  "name": "ICT Multi-Pattern Scanner — OKX-first and live progress",
+  "changes": [
+    "Prefer OKX for health, market universe, and candles because Binance returned HTTP 451 in the deployment health result",
+    "Keep Binance as fallback",
+    "Show current symbol/timeframe while candle data is loading",
+    "Update checker evaluation counters incrementally",
+    "Expose candle failures with pair/timeframe and upstream error"
+  ],
+  "safety": {
+    "marketDataOnly": true,
+    "orderExecution": false,
+    "minimumTimeframe": "M5"
+  },
+  "validation": {
+    "nodeSyntaxChecks": "PASS",
+    "automatedTests": "PASS",
+    "liveApi": "NOT VERIFIED",
+    "browserDeployment": "NOT VERIFIED"
+  }
+}

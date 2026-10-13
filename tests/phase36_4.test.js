@@ -1,0 +1,17 @@
+const fs=require('fs'),assert=require('assert');
+const root=__dirname+'/..',app=fs.readFileSync(root+'/app.js','utf8'),html=fs.readFileSync(root+'/index.html','utf8');
+assert(app.includes('auto:false'),'Auto scan must be disabled by default');
+assert(!/\}\)\(\);\s*scan\(\);/.test(app),'App must not call scan on startup');
+assert(html.includes('id="refreshBtn"')&&html.includes('Start Scan'),'Manual Start Scan button missing');
+assert(html.includes('id="stopScanBtn"'),'Stop button missing');
+assert(app.includes("if(!skipConfirm&&!confirm('Mulai scan ICT + SNR Multi-Timeframe?"),'Start scan confirmation missing');
+assert(app.includes("$('saveSettingsBtn').addEventListener('click'"),'Save settings control missing');
+assert(app.includes("$('resetSettingsBtn').addEventListener('click'"),'Reset settings control missing');
+assert(app.includes("['M5','5']"),'M5 execution timeframe must be present');
+assert(!app.includes("['M1','1']"),'M1 must not be scanned');
+assert(app.includes("const tfPlan=[['D1','D'],['H4','240'],['H1','60'],['M15','15'],['M5','5']]"),'Daily-first multi-timeframe plan must be scanned');
+assert(app.includes('new AbortController()')&&app.includes('state.controller.abort()'),'Scan cancellation must be implemented');
+assert(html.includes('id="scanDiagnostics"')&&app.includes('diagEvaluations'),'Scan diagnostics missing');
+assert(app.includes('Math.max(85,Number(state.currentMinScore)||85)'),'Quality score minimum must not be below 85');
+assert(app.includes('trackSimulatedTrades')&&html.includes('id="winrate"'),'Win rate must remain available');
+console.log('PASS Phase 36.4 static tests: manual start, no auto scan, settings persistence, M5 minimum, historical endpoint scan, cancellation, diagnostics, threshold floor, win-rate UI. Browser interaction/API live not tested.');

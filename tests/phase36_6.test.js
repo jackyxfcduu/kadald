@@ -1,0 +1,15 @@
+const fs=require('fs');const assert=require('assert');
+const app=fs.readFileSync('app.js','utf8');const html=fs.readFileSync('index.html','utf8');const css=fs.readFileSync('styles.css','utf8');
+assert(app.includes("const WINRATE_KEY='ict-snr-phase36.3-simulated-trades-v1'"),'preserve prior browser history key');
+assert(app.includes('function renderTradeHistory(book)'),'history renderer exists');
+assert(app.includes("$('tradeHistoryRows')"),'history table is rendered');
+assert(app.includes('function exportTradeHistory()'),'CSV export exists');
+assert(app.includes('lastCheckedAt:now'),'last check timestamp stored');
+assert(app.includes("closeReason:outcome==='WIN'?'TAKE_PROFIT':'STOP_LOSS'"),'TP/SL reason tracked');
+assert(app.includes('allKeys.has(key)'),'dedup across active and completed records');
+assert(app.includes("renderTradeHistory(book)"),'history refreshes with tracker state');
+assert(html.includes('id="tradeHistory"')&&html.includes('id="tradeHistoryRows"'),'history section and table exist');
+assert(html.includes('id="exportTradeHistory"'),'CSV button exists');
+assert(html.includes('id="historyPairFilter"')&&html.includes('id="historyOutcomeFilter"'),'history filters exist');
+assert(css.includes('.history-filters'),'history filters styled');
+console.log('Phase 36.6 static checks PASS');

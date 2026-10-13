@@ -1,0 +1,9 @@
+{
+  "phase": "36.6",
+  "name": "Trade History Recovery",
+  "base_archive": "ict-multi-pattern-scanner-phase36.5-rolling10-continuous-scan.zip",
+  "changes": ["visible persistent trade history", "filters", "CSV export", "last-price tracking", "active/completed deduplication", "storage failure feedback"],
+  "storage": "browser localStorage; key retained from Phase 36.3 simulated trade book",
+  "execution_mode": "read-only simulated tracking; no order execution",
+  "tests": ["phase36.test.js", "phase36_2_fixtures.test.js", "phase36_3.test.js", "phase36_4.test.js", "phase36_5.test.js", "phase36_6.test.js", "smoke.test.js"]
+}

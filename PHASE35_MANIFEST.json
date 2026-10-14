@@ -1,0 +1,24 @@
+{
+  "phase": "35",
+  "name": "ICT Multi-Pattern Scanner — Binance Primary + OKX Fallback",
+  "market": "USDT-margined perpetual swaps",
+  "primary_provider": "Binance USDⓈ-M Futures public REST API",
+  "fallback_provider": "OKX public USDT SWAP REST API",
+  "api_credentials_required": false,
+  "order_execution": false,
+  "normalized_routes": ["/api/market?action=health", "/api/market?action=universe", "/api/market?action=candles"],
+  "verification": {
+    "javascript_syntax": "PASS",
+    "mocked_binance_adapter": "PASS",
+    "mocked_okx_fallback": "PASS",
+    "zip_integrity": "TO_BE_VERIFIED",
+    "live_upstream_connectivity": "NOT_TESTED",
+    "live_vercel_connectivity": "NOT_TESTED",
+    "pattern_accuracy": "NOT_TESTED"
+  },
+  "limitations": [
+    "Live connectivity must be verified from the deployed Vercel function.",
+    "OKX may not list every Binance USDT perpetual symbol; unsupported fallback symbols return explicit errors.",
+    "Pattern detectors remain provisional and are not evidence of profitability."
+  ]
+}

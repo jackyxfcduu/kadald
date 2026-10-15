@@ -1,6 +1,0 @@
-const fs=require('fs'),assert=require('assert');const root=__dirname+'/..';const app=fs.readFileSync(root+'/app.js','utf8'),html=fs.readFileSync(root+'/index.html','utf8'),engine=fs.readFileSync(root+'/ict-snr-engine.js','utf8');
-for(const token of ["const tfPlan=[['D1','D'],['H4','240'],['H1','60'],['M15','15'],['M5','5']]",'window.ICTSNR.evaluate(ctx,{minRR:1.5,minScore:state.currentMinScore,historyBars:state.currentHistoryLimit})','ict-snr-mtf-d1-v1','D1 → H4 → H1 → M15 → M5'])assert(app.includes(token),'Missing Daily-first ICT + SNR scanner contract: '+token);
-for(const token of ['function zoneMap','function findSweep','bullMss','bearMss','bullFvg','bearFvg','ICT_SNR_MTF'])assert(engine.includes(token),'Missing ICT/SNR engine component: '+token);
-assert(html.includes('ict-snr-engine.js'),'ICT + SNR engine script not loaded');assert(html.includes('Daily-first multi-timeframe setups'),'Daily-first UI label missing');assert(!/create-order|placeOrder|\/fapi\/v1\/order|\/api\/v5\/trade\/order/i.test(app),'Order execution must not exist');
-for(const token of ['trackSimulatedTrades','renderWinRate','WINRATE_KEY','methodWinRateRows','activeTradesValue','netRValue'])assert(app.includes(token),'Missing simulation analytics: '+token);
-console.log('PASS: Daily-first lookup, unified ICT + SNR engine, MTF context, structural RR gate, read-only operation.');

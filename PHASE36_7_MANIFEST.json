@@ -1,0 +1,28 @@
+{
+  "phase": "36.7",
+  "name": "Strategy Performance Audit",
+  "files_changed": [
+    "app.js",
+    "index.html",
+    "styles.css",
+    "pattern-engine.js",
+    "strategy-audit.js",
+    "tests/phase36_7.test.js",
+    "PHASE36_7_CHANGELOG.md",
+    "PHASE36_7_QA_REPORT.md",
+    "PHASE36_7_MANIFEST.json"
+  ],
+  "features": [
+    "Live closed-trade grouping by method, pair, timeframe and direction",
+    "User-triggered provisional OHLC backtest on cached market candles",
+    "Ambiguous TP/SL candle handling",
+    "Expectancy and profit factor diagnostics",
+    "CSV export of backtest trades"
+  ],
+  "limitations": [
+    "No live exchange or browser automation tests",
+    "Fees and slippage excluded",
+    "Provisional ICT detectors are not certified profitable",
+    "SPECIFICATION_REQUIRED methods excluded from backtest"
+  ]
+}
